@@ -2,7 +2,7 @@
 var canvas = document.getElementById("gamingCanvas");
 var ctx = canvas.getContext("2d");
 
-var frameRate = 15;
+var frameRate = 60;
 
 var running;
 
@@ -54,15 +54,15 @@ var paddleP1 = {
 var paddleP2 = {
     x : canvas.width - paddleSpace - paddleWidth,
     y : canvas.height / 2 - paddleHeight / 2 * P2Modifier.height,
-    speed : paddleHeight / 8
+    speed : paddleHeight / 8 * 15 / frameRate
 };
 
 var ball = {
     x : canvas.width / 2,
     y : canvas.height / 2,
     radius : (canvas.width / 80 + canvas.height / 60)/2,
-    speedX : paddleWidth * 0.85,
-    speedY : paddleWidth * 0.85
+    speedX : paddleWidth * 0.85 * 15 / frameRate,
+    speedY : paddleWidth * 0.85 * 15 / frameRate
 };
 
 var winner;
